@@ -6,7 +6,7 @@ using namespace std;
 
 int main (){
 
-    int array[5][5] {};
+    int array[5][5] = {};
 
     cout << "Completa la matriz" << endl << endl;
 

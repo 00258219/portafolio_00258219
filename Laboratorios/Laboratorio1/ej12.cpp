@@ -3,15 +3,15 @@
 
 using namespace std;
 
-int invertir(int n){
-    int aux;
-    if(n > 9){
-        aux = invertir(n/10);
-
-        n = aux;
-    }
-
-    return n;
+int invertir(int n, int l){
+  if (n == 0){
+    return l;
+  }
+  else{
+    int base = n%10;
+    int next = l*10+base;
+    return invertir(n/10 ,next);
+  }
 }
 
 int main (){
@@ -20,7 +20,7 @@ int main (){
 
     cout << "Ingrese cualquier numero entero: "; cin >> number;
 
-    cout << "El numero invertido es: " << invertir(number) << endl;
+    cout << "El numero invertido es: " << invertir(number, 0) << endl;
     
     return 0;
 }
