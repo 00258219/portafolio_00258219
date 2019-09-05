@@ -1,0 +1,44 @@
+//Oscar Enrique Orellana Monterrosa - 00258219
+
+-----------1
+s = initialize (es una pila de numeros)
+int var;
+funct(s, var){
+    if(!empty(s)){
+        pop(s);
+        if(!empty(s)){
+            var = pop(s);
+        }else
+            cout  << solo tiene un elemento
+    }else
+        cout  << esta vacio, no se puede
+}
+
+------------2
+s = initialize (es una pila de numeros)
+int var;
+funct(s, var){
+    int s1;
+    if(!empty(s)){
+        s1 = pop(s);
+        cout  << esta vacio, no se puede
+        if(!empty(s)){
+            var = pop(s)
+            push(s, var)
+            push(s, s1)
+        }else
+            cout  << solo tiene un elemento
+    }else
+        cout  << esta vacio, no se puede
+}
+
+------------3
+s = initialize (es una pila de numeros)
+int var;
+if(!empty){
+    while(!empty(s)){
+        var = pop(s)
+    }
+}else
+    cout << estaba vacio weee xD
+
