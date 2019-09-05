@@ -3,11 +3,11 @@
 -----------1
 s = initialize (es una pila de numeros)
 int var;
-funct(s, var){
+funct(){
     if(!empty(s)){
-        pop(s);
+        pop(s)
         if(!empty(s)){
-            var = pop(s);
+            var = pop(s)
         }else
             cout  << solo tiene un elemento
     }else
@@ -17,7 +17,7 @@ funct(s, var){
 ------------2
 s = initialize (es una pila de numeros)
 int var;
-funct(s, var){
+funct(){
     int s1;
     if(!empty(s)){
         s1 = pop(s);
