@@ -1,0 +1,64 @@
+Oscar Enrique Orellana Monterrosa - 00258219 - sec: 02
+
+Forma Infija a Prefija
+
+1) A - B /(C * D$E)
+
+**De manera intuitiva:
+A - B /(C * D$E)
+A-B/(C * DE$)
+A-B/(CDE$*)
+A-BCDE$*/
+ABCDE$*/-
+
+**Utilizando el algoritmo:
+symb	opstack		prefijo
+A 			A
+-	-		A
+B	-		AB
+/	-/		AB
+(	-/(		AB
+C	-/(		ABC
+*	-/(*		ABC
+D	-/(*		ABCD
+$	-/(*$		ABCD
+E	-/(*$		ABCDE
+)	-/*		ABCDE$
+	-/		ABCDE$*
+	-		ABCDE$*/
+			ABCDE$*/-
+
+
+
+2) ((A+B)*C-(D-E))$(F+G)
+
+**De manera intuitiva:
+((A+B)*C-(D-E))$(F+G)
+((AB+)*C-(DE-))$(FG+)
+AB+C*DE-- $ FG+
+AB+C*DE--FG+$
+
+**Utilizando el algoritmo:
+symb	opstack		prefijo
+( 	(		
+(	((		
+A	((		A
++	((+		A
+B	((+		AB
+)	(		AB+
+*	(*		AB+
+C	(*		AB+C
+-	(*		AB+C
+(	(-(		AB+C*
+D	(-(		AB+C*D			
+-	(-(-		AB+C*D		
+E	(-(-		AB+C*DE
+)	(-		AB+C*DE-
+)			AB+C*DE--	
+$	$		AB+C*DE--
+(	$(		AB+C*DE--
+F	$(		AB+C*DE--F
++	$(+		AB+C*DE--F
+G	$(+		AB+C*DE--FG
+)	$		AB+C*DE--FG+
+			AB+C*DE--FG+$
