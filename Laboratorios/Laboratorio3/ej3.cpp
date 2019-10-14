@@ -32,11 +32,26 @@ void pop(Libro *s){
     }
 }
 
-void takeLastLikePeek(Libro s){
-    if(!empty(&s)){
-        pop(&s);
-        takeLastLikePeek(s);
+void search(Libro s){
+    string book;
+    cout << "Ingrese el libro que busca: ";
+    cin.ignore();
+    getline(cin, book);
+    
+    while(!empty(&s)){
+        
+        if(s.tiulo[s.top] == book){
+            cout << "Libro Encontrado!" << endl;
+            cout << "Sus paginas: " << s.numPaginas[s.top] << endl;
+            return;
+        }
+        
+        if(s.top >= 0){
+            (s.top)--;
+        }
     }
+    
+    cout << "No se encontro!" << endl;
 }
 
 void meter(Libro *s){
@@ -59,7 +74,7 @@ int main(){
 
     while(true){
         cout << "1-Meter libro" << endl;
-        cout << "2-Ver la libreria" << endl;
+        cout << "2-Buscar libro" << endl;
         cout << "3-Terminar" << endl;
         int n;
         cin >> n;
@@ -67,8 +82,7 @@ int main(){
         if(n == 1){
             meter(&libreria);
         }else if(n == 2){
-            cout << endl << "Tus libros son: " << endl;
-            takeLastLikePeek(libreria);
+            search(libreria);
         }else if(n == 3){
             return 0;
         }
